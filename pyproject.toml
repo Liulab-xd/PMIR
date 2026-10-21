@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pmir"
+version = "0.1.0"
+description = "Polarization-guided underwater image restoration with physical and wavelet priors"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "numpy",
+    "Pillow",
+    "tqdm",
+]
+
+[project.scripts]
+pmir-train = "pmir.cli.train:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pmir", "pmir.*"]
